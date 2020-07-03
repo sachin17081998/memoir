@@ -7,3 +7,6 @@ step 1: create an account by signing up (keep in mind all the fileds are importa
 step 2: then login using username and password<br>
 step 3: you will be redirected to your dashboard from where you can create new diary entries and can perform operations like edit and delete.<br><br>
 > ## keep in mind all the fileds are imporatnt even your profile pic so don't skip during signup otherwise you will not be able to acces your account
+
+### for using the app in you local system
+actvate the environment 'journalenv' and run the django server
