@@ -1,0 +1,11 @@
+{% extends "journal/base.html" %}
+{% block body_block %}
+<h5 style="margin-left:2rem;color:#4a148c;">After deleting there is no option of recovery.<br>Choose wisely. </h5>
+<form action="" method="post">
+    {% csrf_token %}
+    <p style="margin:2rem;">{{diary.text}}</p>
+    <input class="btn" id="delete-btn" type="submit" value="delete">
+    <a class="btn" id="delete-btn"href="{% url 'diary_detail' pk=diary.pk %}">cancel</a>
+</form>
+  
+{% endblock body_block %}

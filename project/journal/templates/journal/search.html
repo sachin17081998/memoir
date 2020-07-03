@@ -1,0 +1,29 @@
+{% include "journal/base.html" %}
+{% block body_block %}
+  <h1 style="color:#e500a4;"> Searched Entry</h1>
+  {% if not text %}
+  <h1 style="color:#e500a4;"> Not Found</h1>
+  {% endif %}
+  {% for t in text  %}
+     {% if t.user_profile_id == user.pk %}
+     <div class="card  " id="dashboard-entry-card">
+      <div class="card-title " style="margin-top:10vh; padding:1rem;color:teal;">
+        {{ t.creation_date|date:"d M y"}}
+      </div>
+      <div class="card-stacked">
+        <div class="card-content" style=" padding:1rem;border-right:solid 5px #003049;">
+          <p>{{ t.text }}</p>
+        </div>
+         <div class="card-action">
+          <a class="btn" id="edit-btn" href="{% url 'diary_update' pk=t.pk %}">update</a>
+          <a class="btn" id="edit-btn" href="{% url 'diary_delete' pk=t.pk %}">delete</a>
+         </div>
+      </div>
+    </div>   
+    
+    {% endif %}
+ 
+
+  {% endfor %}
+  
+{% endblock body_block %}

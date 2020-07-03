@@ -1,0 +1,55 @@
+{% extends "journal/base2.html" %}
+{% load static %}
+{% block body_block %}
+<div class="row hide-on-small-only" id="signup-landing" style="background-image: url({% static 'journal/images/d8.jpg' %});background-size:100% 100%;min-height:100vh;">
+<div class="col l4 m4 s0"></div>
+  <div class="card col l4 m4 s12"  id="signup-form">
+
+{% if registered %}
+    <h1 style="color:rgb(204, 203, 203);">Thanks For Registring</h1>
+     <p style="color:whitesmoke"> click to login...</p>
+    <a href="{% url 'user_login' %}" style="background-color:#7fff00;color:whitesmoke" class="btn">Login</a>
+    {% else %}
+    <div class="card-title white-text" style="margin-top: -25px;">
+    <h1>Register Here</h1>
+  </div>
+    <form action="" style="color:rgb(204, 203, 203);" method="post" class="signup_form" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      
+      {{ profile_form.as_p }}
+      
+
+  
+      <input class="btn " id="signup-btn" type="submit" value="SIGNUP">
+    </form>
+
+    {% endif %}
+</div>
+</div>
+
+<div class="row hide-on-med-and-up" id="signup-landing" style="background-image: url({% static 'journal/images/d9.jpg' %});background-size:100% 100%;min-height:100vh;">
+  <div class="col l4 m4 s0"></div>
+    <div class="card col l4 m4 s12"  id="signup-form">
+  
+  {% if registered %}
+      <h1>thanks for registring</h1>
+      {% else %}
+      <div class="card-title white-text" style="margin-top: -25px;">
+      <h1>Register Here</h1>
+    </div>
+      <form action="" style="color:rgb(204, 203, 203);"method="post" class="signup_form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        
+        {{ profile_form.as_p }}
+        
+  
+    
+        <input class="btn " id="signup-btn" type="submit" value="SIGNUP">
+      </form>
+  
+      {% endif %}
+  </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "journal/base.html" %}
+{% block body_block %}
+<h4 style="margin-left:2rem;color:#4a148c;">Your Diary</h4>
+
+
+<div class="card   " id="dashboard-entry-card">
+    <div class="card-title " style="margin-top:10vh; padding:1rem;color:#624783">
+        <h6 style="color:#624783;">Created On:{{ diary.creation_date|date:"d M Y"}}</h6>
+    </div>
+    <div class="card-content">
+        {{ diary.text}}
+        </div>
+      <div class="card-action">
+        <a class="btn" id="edit-btn" href="{% url 'diary_update' pk=diary.pk %}">update</a>
+         <a class="btn" id="edit-btn" href="{% url 'diary_delete' pk=diary.pk %}">delete</a>
+      </div>
+    <!-- </div> -->
+  </div>
+
+
+  
+{% endblock body_block %}

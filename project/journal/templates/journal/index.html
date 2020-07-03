@@ -1,0 +1,28 @@
+
+{% extends "journal/base2.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<!-- {% if user.get_profile.is_store %}
+    {% include 'dashboard' %}
+{% endif %} -->
+<!-- desktop view -->
+<div id="index-landing" style="background-image: url({% static 'journal/images/d1.jpg' %});">
+  <div class="row">
+    <div class="col l7"></div>
+  <div class="col l5">
+  <a class="btn " style="margin-top:40%;" id='index-btn' href="{% url 'signup' %}">signup</a> 
+  <br>
+  <a class="btn  " id='index-btn' href="{% url 'user_login' %}">login</a>
+</div>
+</div>
+</div>
+
+<div class="hide-on-med-and-up"  id="index_landing_mobile" style="min-height:100vh;min-width:100vw;background-image: url({% static 'journal/images/d6.jpg' %});">
+  <div class="row" style="">
+  <a class="btn " style="margin-top:80vh;" id='index-btn' href="{% url 'signup' %}">signup</a> 
+  <a class="btn  " style="margin-left:3%;margin-top: -3%;" id='index-btn' href="{% url 'user_login' %}">login</a>
+</div>
+</div>
+{% endblock body_block %}

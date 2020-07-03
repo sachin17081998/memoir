@@ -1,0 +1,70 @@
+{% extends "journal/base.html" %}
+{% block body_block %}
+<!-- TODO:hii -->
+<!-- ! Alerts:hiii -->
+<!-- ? Queries:jii -->
+<!-- //:hii -->
+<!-- *Highlights:hii -->
+
+<div class="row" id="dashboard">
+    <!-- !user card -->
+    <div class="col l3 m4 s12 " >
+        <div class="card sticky-action fixed" id="dashboard-left" >
+            <div class="card-image ">
+                <img id="user-pic" src="{{ user.user_profile.profile_pic.url }}" alt="">
+            </div>
+            <div class="card-content">
+                <p id="username"> welcome <br>
+                <p style="color:#f7fff7;font-size: 2rem;">{{ user.username }}</p>
+                </p>
+                <!-- <br>
+            <p id="userid">{{user.email}}</p> -->
+            </div>
+            <div class="card-action">
+                Enter date to search a particular day entries.
+                <form action="{% url 'search'  %}" method="get">
+                    {% csrf_token %}
+                    <label for="search">enter date</label>
+                    <input style="color:whitesmoke;"name='search' type="date">
+                    <input class='btn' id="search-btn" type="submit" name='searchbtn' value="search">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! 3 days entries     -->
+    <div class="col l9 " id="dashboard-entries">
+        <h3 style="color:#e500a4;"> Last 3 days entries:</h3>
+        {% for t in diary  %}
+         
+        <div class="card horizontal " id="dashboard-entry-card">
+            <div class="card-title " style="margin-top:10vh; padding:1rem;color:teal;">
+              {{ t.creation_date|date:"d M y"}}
+            </div>
+            <div class="card-stacked">
+              <div class="card-content" style=" padding:1rem;border-right:solid 5px #003049;">
+                <p>{{ t.text }}</p>
+              </div>
+              <!-- <div class="card-action">
+                <a href="#">This is a link</a>
+              </div> -->
+            </div>
+          </div>
+       
+        {% endfor %}
+   
+    </div>
+
+
+    <!-- <div>
+
+     <img style="min-width: 500px;min-height:500px" src="{{ user.user_profile.profile_pic.url }}" alt="dp">
+         <a href="{% url 'create_diary' pk=user.pk %}">create</a>
+        <a href="{% url 'diary_list' pk=user.pk %}">diary list</a>
+    </div>
+    <a href="{% url 'user_logout' %}">logout</a> -->
+
+
+</div>
+{% endblock body_block %}

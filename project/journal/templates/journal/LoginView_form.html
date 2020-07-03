@@ -1,0 +1,40 @@
+{% extends "journal/base2.html" %}
+{% load static %}
+{% block body_block %}
+<div class="row hide-on-small-only" id="signup-landing" style="padding-top:10vh;background-image: url({% static 'journal/images/d8.jpg' %});background-size:100% 100%;min-height:100vh;">
+  <div class="col l4 m4 s0"></div>
+    <div class="card col l4 m4 s12"  id="login-form">
+  <h1 style="color:rgb(204, 203, 203);">login</h1>
+  <p style="color:#d90429;">{{error}}</p>
+  <form action="" method="POST">
+      {% csrf_token %}
+      
+      <label for="username">username:</label>
+      <input  class="login-fields" type="text" name="username">
+      <label for="password">password:</label>
+      <input  class="login-fields" type="password" name="password" id="">
+      <!-- {{ form.as_p}} -->
+      <input id="login-btn"  type="submit" value="login">  
+    </form>    
+  </div>
+</div>
+</div>
+<div class="row show-on-small-only" id="signup-landing" style="padding-top:10vh;background-image: url({% static 'journal/images/d9.jpg' %});background-size:100% 100%;min-height:100vh;">
+  <div class="col l4 m4 s0"></div>
+    <div class="card col l4 m4 s12"  id="login-form">
+  <h1 style="color:rgb(204, 203, 203);">login</h1>
+  <p style="color:#d90429;">{{error}}</p>
+  <form action="" method="POST">
+      {% csrf_token %}
+      <label for="username">username:</label>
+      <input class="login-fields" type="text" name="username">
+      <label for="password">password:</label>
+      <input class="login-fields" type="password" name="password" id="">
+      <!-- {{ form.as_p}} -->
+      <input id="login-btn"  type="submit" value="login">  
+    </form>    
+  </div>
+</div>
+</div>
+{% endblock body_block %}
+      

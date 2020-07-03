@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'journal/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'journal/css/materialize.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+</head>
+<body>
+  
+    {% if user.is_authenticated and user.is_active %}
+    <div class="navbar-fixed " >
+        <nav >
+      <div class="nav-wrapper black "  id="navigation">
+        <a href="{% url 'dashboard' pk=user.pk %}" class="brand-logo " id='dashboard-logo' >Dashboard</a>
+        
+         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i  class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" >
+          
+            <li><a href="{% url 'create_diary' pk=user.pk %}">New Entry</a></li>
+            <li><a href="{% url 'diary_list' pk=user.pk %}">Content</a></li>
+            <li><a href="{% url 'user_logout' %}">Logout</a></li>
+            
+          
+            
+         
+          
+        </ul>
+        <ul id="" class="right hide-on-med-and-down">
+
+          <li><a href="https://github.com/">Github</a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+    
+   <ul class="sidenav white-text" id='mobile-demo' style="max-width:60vw;">
+   
+      <li><a href="{% url 'create_diary' pk=user.pk %}">New Entry</a></li>
+      <li><a href="{% url 'diary_list' pk=user.pk %}">Contents</a></li>
+      <li><a href="{% url 'user_logout' %}">Logout</a></li>
+      
+  </ul> 
+    {% endif %}
+    {% block body_block %}
+    {% endblock %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+    <script src="{% static 'journal/js/main.js' %}"></script>  
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "journal/base.html" %}
+{% block body_block %}
+
+  <h4 style="margin-left:2rem;color:#4a148c;">Write Here</h4>
+  <form  id="entry-form" style="color:red;"action="" method="POST">
+      {% csrf_token %}
+         
+      {{ diary_form.text }}
+  
+      <button id="entry-btn" class='btn' type="submit" class="btn ">Save</button>
+  </form>
+
+{% endblock body_block %}
