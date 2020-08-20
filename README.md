@@ -10,3 +10,5 @@ step 3: you will be redirected to your dashboard from where you can create new d
 
 ### for using the app in you local system
 actvate the environment 'journalenv' and run the django server
+<br><br>
+![Image of Yaktocat](https://github.com/sachin17081998/memoir/memonir.png)
