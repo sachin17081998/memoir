@@ -1,5 +1,5 @@
 # memoir
-It is an online journal that allows you to mak diary entries on day to day basis. It is currently deployed on heroku and acn be accessed using the following 
+It is an online journal that allows you to make diary entries on day to day basis. It is currently deployed on heroku and can be accessed using the following 
 url:http://memonir.herokuapp.com/
 <br>
 Steps for using this web app<br>
